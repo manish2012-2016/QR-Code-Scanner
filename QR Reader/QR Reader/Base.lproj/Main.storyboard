@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Barcode View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BarcodeViewController" customModule="QR_Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHa-U1-nk2" userLabel="previewView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BER-mm-JAd">
+                                <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                <subviews>
+                                    <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KMK-z1-7HO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="oeS-Gl-rR3"/>
+                                        </connections>
+                                    </webView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="f1t-6T-rKX">
+                                        <rect key="frame" x="169" y="148.5" width="37" height="37"/>
+                                        <color key="color" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="fhgjghj" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pUX-Eg-nYc">
+                                        <rect key="frame" x="0.0" y="273.5" width="375" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="H8I-th-4Dv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pUX-Eg-nYc" firstAttribute="leading" secondItem="BER-mm-JAd" secondAttribute="leading" id="0le-I5-n8A"/>
+                                    <constraint firstAttribute="trailing" secondItem="KMK-z1-7HO" secondAttribute="trailing" id="4wL-jK-bNJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="pUX-Eg-nYc" secondAttribute="bottom" id="LvA-IG-nWy"/>
+                                    <constraint firstItem="f1t-6T-rKX" firstAttribute="centerY" secondItem="BER-mm-JAd" secondAttribute="centerY" id="McA-ub-SAb"/>
+                                    <constraint firstAttribute="trailing" secondItem="pUX-Eg-nYc" secondAttribute="trailing" id="N2C-qY-XnY"/>
+                                    <constraint firstItem="KMK-z1-7HO" firstAttribute="leading" secondItem="BER-mm-JAd" secondAttribute="leading" id="VxR-UK-cxG"/>
+                                    <constraint firstItem="KMK-z1-7HO" firstAttribute="top" secondItem="BER-mm-JAd" secondAttribute="top" id="a2s-p7-Uhx"/>
+                                    <constraint firstAttribute="bottom" secondItem="KMK-z1-7HO" secondAttribute="bottom" constant="59" id="fbC-aM-CLT"/>
+                                    <constraint firstItem="f1t-6T-rKX" firstAttribute="centerX" secondItem="BER-mm-JAd" secondAttribute="centerX" id="uHa-4s-q2X"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BER-mm-JAd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6sm-ty-sMV"/>
+                            <constraint firstItem="BER-mm-JAd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="6zR-to-HUI"/>
+                            <constraint firstItem="xHa-U1-nk2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ELu-hG-Z9y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BER-mm-JAd" secondAttribute="bottom" id="Ghf-Sj-hVB"/>
+                            <constraint firstItem="BER-mm-JAd" firstAttribute="top" secondItem="xHa-U1-nk2" secondAttribute="bottom" id="HEI-yh-7Ew"/>
+                            <constraint firstAttribute="trailing" secondItem="xHa-U1-nk2" secondAttribute="trailing" id="SJM-cu-2Xz"/>
+                            <constraint firstItem="xHa-U1-nk2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YA8-tx-XNL"/>
+                            <constraint firstAttribute="trailing" secondItem="BER-mm-JAd" secondAttribute="trailing" id="u56-Zt-OYZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myIndicator" destination="f1t-6T-rKX" id="3Ea-9r-6Pl"/>
+                        <outlet property="myOutPutView" destination="BER-mm-JAd" id="sIZ-Ro-5ov"/>
+                        <outlet property="myOutput" destination="pUX-Eg-nYc" id="lqm-jI-iQh"/>
+                        <outlet property="myWebView" destination="KMK-z1-7HO" id="0hW-8c-tpE"/>
+                        <outlet property="previewView" destination="xHa-U1-nk2" id="YcX-O9-bBe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+</document>
